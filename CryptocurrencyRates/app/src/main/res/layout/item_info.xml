@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutInfo"
+    android:layout_width="match_parent"
+    android:layout_height="290dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dTextRank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rank: "
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/dTextSymb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Symbol: "
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/dTextPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Price: USD"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/dTextVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volume (24h): USD"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/dTextMarketCap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Market cap: USD"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/dTextCSupply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Circulating supply: BTC"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/dTextTSupply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total supply: BTC"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/dTextMSupply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Max supply: BTC"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <TextView
+        android:id="@+id/dTextPChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Percent change (1h/24h/7d): "
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:typeface="normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/dTextP1h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/dTextP24h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="24"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:typeface="normal" />
+
+        <TextView
+            android:id="@+id/dTextP7d"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="7"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:typeface="normal" />
+    </LinearLayout>
+
+</LinearLayout>

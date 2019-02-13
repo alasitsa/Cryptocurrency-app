@@ -1,0 +1,66 @@
+<resources>
+    <!-- main -->
+    <string name="app_name">Cryptocurrency Rates</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="NAME_TITLE">Name</string>
+    <string name="RU_NAME_TITLE">Название</string>
+
+    <string name="COST_TITLE">Cost</string>
+    <string name="RU_COST_TITLE">Цена</string>
+
+    <string name="PERCENT_TITLE">Percent change</string>
+    <string name="RU_PERCENT_TITLE">Изменение курса</string>
+
+    <!-- info -->
+    <string name="CID">Id: </string>
+    <string name="NAME">Name: </string>
+    <string name="SYMB">Symbol: </string>
+    <string name="RANK">Rank: </string>
+    <string name="PRICE">Price: </string>
+    <string name="VOLUME">Volume (24h): </string>
+    <string name="MCAP">Market cap: </string>
+    <string name="CSUPPLY">Circulating supply: </string>
+    <string name="TSUPPLY">Total supply: </string>
+    <string name="MSUPPLY">Max supply: </string>
+    <string name="PCHANGE">Percent change (1h/24h/7d): </string>
+
+    <string name="RU_NAME">Название: </string>
+    <string name="RU_SYMB">Символ: </string>
+    <string name="RU_RANK">Рейтинг: </string>
+    <string name="RU_PRICE">Цена: </string>
+    <string name="RU_VOLUME">Объем (24h): </string>
+    <string name="RU_MCAP">Рыночная капитализация: </string>
+    <string name="RU_CSUPPLY">Оборотная подача: </string>
+    <string name="RU_TSUPPLY">Общее предложение: </string>
+    <string name="RU_MSUPPLY">Max supply: </string>
+    <string name="RU_PCHANGE">Изменения (1h/24h/7d): </string>
+
+    <string name="RU_IS_NULL">Не задано</string>
+    <string name="IS_NULL">Not exist</string>
+
+    <!-- settings -->
+    <string name="SETTINGS_TITLE">Settings</string>
+    <string name="RU_SETTINGS_TITLE">Настройки</string>
+
+    <string name="RU_LANGUAGE_TEXT">Выберите язык</string>
+    <string name="LANGUAGE_TEXT">Choose your language</string>
+
+    <string name="RU_POINTS_TEXT">Выберите количество точек</string>
+    <string name="POINTS_TEXT">Choose number of points</string>
+
+    <string name="RU_SAVE_BUTTON">Сохранить</string>
+    <string name="SAVE_BUTTON">Save</string>
+    <!--public static final String CID = "Id: ";
+    public static final String NAME = "Name: ";
+    public static final String SYMB = "Symbol: ";
+    public static final String RANK = "Rank: ";
+    public static final String PRICE = "Price: ";
+    public static final String VOLUME = "Volume 24(h): ";
+    public static final String MCAP = "Market cap: ";
+    public static final String CSUPPLY = "Circulating supply: ";
+    public static final String TSUPPLY = "Total supply: ";
+    public static final String MSUPPLY = "Max supply: ";
+    public static final String PCHANGE = "Percent change (1h/24h/7d): ";-->
+</resources>

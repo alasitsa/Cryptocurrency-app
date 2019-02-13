@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity">
+
+    <TextView
+        android:id="@+id/settingsLanguageText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <ListView
+        android:id="@+id/listViewSettings"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:choiceMode="singleChoice" />
+
+    <TextView
+        android:id="@+id/settingsPointsText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Points"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+    <ListView
+        android:id="@+id/listViewPointsSettings"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:choiceMode="singleChoice" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Button"
+        android:textAllCaps="true"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:typeface="normal" />
+
+</LinearLayout>
