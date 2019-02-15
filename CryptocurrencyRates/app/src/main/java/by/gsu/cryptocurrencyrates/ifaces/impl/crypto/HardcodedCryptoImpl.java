@@ -1,6 +1,8 @@
 package by.gsu.cryptocurrencyrates.ifaces.impl.crypto;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -9,6 +11,7 @@ import java.util.List;
 import by.gsu.cryptocurrencyrates.InfoActivity;
 import by.gsu.cryptocurrencyrates.R;
 import by.gsu.cryptocurrencyrates.adapter.MainListAdapter;
+import by.gsu.cryptocurrencyrates.adapter.RecyclerViewAdapter;
 import by.gsu.cryptocurrencyrates.constants.Constants;
 import by.gsu.cryptocurrencyrates.controller.MainActivityController;
 import by.gsu.cryptocurrencyrates.ifaces.ICryptoDAO;
@@ -73,21 +76,10 @@ public class HardcodedCryptoImpl implements ICryptoDAO {
         list.add(cryptoes[2]);
         cryptoList = list;
 
-        MainListAdapter adapter = new MainListAdapter(activity, R.layout.item_main, list);
-        ListView listView = (ListView) activity.findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Crypto crypto = getItem(position);
-                LocalCrypto.setCrypto(crypto);
-                Intent intent = new Intent(view.getContext(), InfoActivity.class);
-                activity.startActivity(intent);
-            }
-        });
-
-
-
+        RecyclerView recyclerView = activity.findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(activity.getApplicationContext(), cryptoList);
+        recyclerView.setAdapter(adapter);
     }
     public Crypto getItem(int position) {
         return cryptoList.get(position);

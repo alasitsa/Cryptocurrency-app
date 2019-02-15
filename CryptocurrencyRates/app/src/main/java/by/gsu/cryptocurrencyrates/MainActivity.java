@@ -8,12 +8,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ListView;
-
 import by.gsu.cryptocurrencyrates.constants.Constants;
 import by.gsu.cryptocurrencyrates.controller.MainActivityController;
 import by.gsu.cryptocurrencyrates.ifaces.ICryptoDAO;
 import by.gsu.cryptocurrencyrates.ifaces.impl.crypto.ApiCryptoImpl;
+import by.gsu.cryptocurrencyrates.ifaces.impl.crypto.HardcodedCryptoImpl;
 import by.gsu.cryptocurrencyrates.properties.Settings;
 
 public class MainActivity extends AppCompatActivity {

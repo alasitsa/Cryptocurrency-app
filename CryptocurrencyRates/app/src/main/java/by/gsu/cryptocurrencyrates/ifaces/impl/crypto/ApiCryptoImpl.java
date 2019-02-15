@@ -1,6 +1,8 @@
 package by.gsu.cryptocurrencyrates.ifaces.impl.crypto;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -9,6 +11,7 @@ import java.util.List;
 import by.gsu.cryptocurrencyrates.InfoActivity;
 import by.gsu.cryptocurrencyrates.R;
 import by.gsu.cryptocurrencyrates.adapter.MainListAdapter;
+import by.gsu.cryptocurrencyrates.adapter.RecyclerViewAdapter;
 import by.gsu.cryptocurrencyrates.constants.Constants;
 import by.gsu.cryptocurrencyrates.controller.MainActivityController;
 import by.gsu.cryptocurrencyrates.ifaces.ICryptoDAO;
@@ -33,6 +36,7 @@ public class ApiCryptoImpl implements ICryptoDAO {
                 .build();
         api = retrofit.create(CoinMarketApi.class);
         final int currencyId = Settings.getCurrencyId();
+
         getApi().getCryptoList(Constants.CURRENCIES[currencyId],Constants.CRYPTO_COUNT).enqueue(new Callback<List<Crypto>>() {
             @Override
             public void onResponse(Call<List<Crypto>> call, Response<List<Crypto>> response) {
@@ -44,25 +48,16 @@ public class ApiCryptoImpl implements ICryptoDAO {
                     else if(currencyId == Constants.RUB_ID)
                         convertRUB();
                 }
-                MainListAdapter adapter = new MainListAdapter(activity, R.layout.item_main, list);
-                ListView listView = (ListView) activity.findViewById(R.id.listView);
-                listView.setAdapter(adapter);
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Crypto crypto = getItem(position);
-                        LocalCrypto.setCrypto(crypto);
-                        Intent intent = new Intent(view.getContext(), InfoActivity.class);
-                        activity.startActivity(intent);
-                    }
-                });
+                RecyclerView recyclerView = activity.findViewById(R.id.recyclerView);
+                recyclerView.setLayoutManager(new LinearLayoutManager(activity));
+                RecyclerViewAdapter adapter = new RecyclerViewAdapter(activity.getApplicationContext(), cryptoList);
+                recyclerView.setAdapter(adapter);
             }
             @Override
             public void onFailure(Call<List<Crypto>> call, Throwable t) {
                 Toast.makeText(activity.getApplicationContext(), Constants.ERROR_CONNECTION, Toast.LENGTH_LONG).show();
             }
         });
-
     }
     public Crypto getItem(int position) {
         return cryptoList.get(position);
