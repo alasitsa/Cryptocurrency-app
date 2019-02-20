@@ -8,6 +8,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
+
 import by.gsu.cryptocurrencyrates.constants.Constants;
 import by.gsu.cryptocurrencyrates.controller.MainActivityController;
 import by.gsu.cryptocurrencyrates.ifaces.ICryptoDAO;
@@ -29,10 +31,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setGlobals();
-        MainActivityController.titleListInit(this);
-        MainActivityController.listViewInit(cryptoDAO, this);
         navBarInit();
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
 
+        //columns
+        TextView name = findViewById(R.id.textTitleName);
+        TextView cost = findViewById(R.id.textTitleCost);
+        TextView percent = findViewById(R.id.textTitlePercentChange);
+        name.setText(Settings.getTitleName(this));
+        cost.setText(Settings.getTitleCost(this) + " " + Settings.getCurrency());
+        percent.setText(Settings.getTitlePercent(this));
+
+        //list
+        cryptoDAO.refresh(this);
     }
     private void navBarInit() {
         dLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
